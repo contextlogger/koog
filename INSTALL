@@ -1,0 +1,75 @@
+KOOG LIBRARY SETUP
+
+To use Koog, you must have PLT Scheme version 4 installed. Get it from
+http://plt-scheme.org/ if you do not already have it installed, or say
+on Debian-based Linux distributions it might be sufficient to do
+
+  sudo aptitude install mzscheme
+
+provided that the version included in the distribution is recent
+enough. (mzscheme --version should tell you the version number.)
+
+Begin Koog installation by unpacking the tar file under some directory
+that is on your PLTCOLLECTS path.
+
+For example:
+
+  mkdir $HOME/pltcollects
+  cd $HOME/pltcollects
+  tar xzvf /tmp/koog.tar.gz
+  export $PLTCOLLECTS=$HOME/pltcollects:$PLTCOLLECTS
+
+Now you should be able to do:
+
+  mzscheme --eval '(require koog/koog)'
+
+KOOG COMMAND LINE TOOL SETUP
+
+To run Koog from the command line, you can use the cli-shell.sh shell
+script, on a suitably Unix-like system at least. To create a "koog"
+executable, you might for instance:
+
+  mkdir -p $(HOME)/bin
+  ln -sf $HOME/pltcollects/koog/cli-shell.sh $(HOME)/bin/koog
+  export PATH=$PATH:$(HOME)/bin
+
+and now it should be possible to run
+
+  koog --help
+
+EMACS INTEGRATION SETUP
+
+To set up Koog for use within the Emacs editor, with the C++ language,
+say, you might add something like the following to your ~/.emacs file:
+
+  (setq load-path
+        (nconc
+         (list
+          (concat (getenv "HOME") "/pltcollects/koog/emacs")
+         )
+         load-path))
+
+  (require 'koog)
+
+  (add-hook 'c++-mode-hook
+            (lambda ()
+              (define-key c++-mode-map [(control o) (m)]
+                'koog-map-prefix)
+              ))
+
+Having done this, in the C++ mode you should be able to insert Koog
+markers with the command C-o m i, and so forth. See the koog.el file
+for more information.
+
+VIM INTEGRATION SETUP
+
+To set up Koog for use within the Vim editor, you might add something
+like the following to your ~/.vimrc file:
+
+  if filereadable(expand("$HOME/pltcollects/koog/vim/koog.vimrc"))
+    source $HOME/pltcollects/koog/vim/koog.vimrc
+  endif
+
+Having done this, you should be able to insert Koog markers with the
+command m i, and so forth. See the koog.vimrc file for more
+information.
