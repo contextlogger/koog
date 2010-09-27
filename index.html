@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://www.hiit.fi/sites/all/themes/hiit/favicon.ico" type="image/x-icon" />
+<style type="text/css">
+
+@import "style.css";
+
+h1 { text-align: center }
+
+h1, h2 { clear: both }
+
+.navbar {
+}  
+
+.navmenu {
+  margin: 1em;
+  border-style: none;
+  float: left;
+}  
+
+.navtitle {
+  font-weight: bold;
+}  
+
+.navitem {
+  display: block;
+  font-weight: normal;
+}
+
+.edition {
+  color: #808080;
+  font-size: larger;
+  vertical-align: text-top;
+}
+
+</style>
+<title>Koog</title>
+</head>
+
+<body>
+
+<h1>Koog</h1>
+
+<div class="navbar">
+
+  <table class="navmenu" summary="about menu">
+    <tr><td><span class="navtitle">about</span></td></tr>
+    <tr><td><a class="navitem" href="manual/manual.html#(part._concept)">concept</a></td></tr>
+    <tr><td><a class="navitem" href="manual/manual.html#(part._features)">features</a></td></tr>
+  </table>
+
+  <table class="navmenu" summary="docs menu">
+    <tr><td><span class="navtitle">docs</span></td></tr>
+    <tr><td><a class="navitem" href="INSTALL">installation</a></td></tr>
+    <tr><td><a class="navitem" href="manual/manual.html">manual</a></td></tr>
+    <tr><td><a class="navitem" href="manual/manual.html#(part._faq)">FAQ</a></td></tr>
+  </table>
+
+  <table class="navmenu" summary="code menu">
+    <tr><td><span class="navtitle">code</span></td></tr>
+    <tr><td><a class="navitem" href="LICENSE">license</a></td></tr>
+    <tr><td><a class="navitem" href="dist/">download</a></td></tr>
+    <tr><td><a class="navitem" href="src/">browse</a></td></tr>
+    <tr><td><a class="navitem" href="manual/manual.html#(part._repo)">repository</a></td></tr>
+  </table>
+
+  <table class="navmenu" summary="community menu">
+    <tr><td><span class="navtitle">community</span></td></tr>
+    <tr><td><a class="navitem" href="http://twitter.com/contextlogger2">twitter</a></td></tr>
+  </table>
+
+</div>
+
+<h2>Introduction</h2>
+
+<p>
+<em>Koog</em> is a mixed-code generation tool. It supports C-like comment syntax, and assumes that code-generation directives are written in <a href="http://www.racket-lang.org/">Racket</a> / PLT Scheme. It provides a Scheme API, a command-line interface, and editor integration for <a href="http://www.gnu.org/software/emacs/">Emacs</a> and <a href="http://www.vim.org/">Vim</a>. The one novel feature it has (compared to existing mixed-code generators) is the option of only (re)generating individual code regions, which provides more control when used interactively in an editor.
+</p>
+
+<p>
+The tool was originally developed for use in the <a href="http://www.contextlogger.org/">ContextLogger2</a> project at <a href="http://www.hiit.fi/">HIIT</a>, motivated by the fact that native <a href="http://www.symbian.org/">Symbian</a> C++ is notoriously verbose. Nokia <a href="http://www.nokia.com/press/press-releases/showpressrelease?newsid=1444289">claims</a> a &ldquo;70 percent reduction in the number of lines of code&rdquo; when using Qt as opposed to Symbian APIs in C++.</p>
+
+<hr class="light" />
+<p><a href="http://hiit.fi/u/hasu/">Tero Hasu</a></p>
+
+</body>
+</html>
+
+<!--
+% Local Variables:
+% mode: longlines
+% End:
+-->

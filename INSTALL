@@ -1,8 +1,9 @@
 KOOG LIBRARY SETUP
 
-To use Koog, you must have PLT Scheme version 4 installed. Get it from
-http://plt-scheme.org/ if you do not already have it installed, or say
-on Debian-based Linux distributions it might be sufficient to do
+To use Koog, you must have PLT Scheme (or Racket) version 4 or 5
+installed. Get it from http://www.racket-lang.org/ if you do not
+already have it installed, or say on Debian-based Linux distributions
+it might be sufficient to do
 
   sudo aptitude install mzscheme
 

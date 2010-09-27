@@ -10,7 +10,7 @@
 ;; cogapp.py and whiteutils.py of Cog are a useful reference when
 ;; implementing tools such as this.
 ;; 
-;; This script requires PLT Scheme version 4.
+;; This script requires PLT Scheme / Racket version 4 or 5.
 
 (require scheme/port)
 (require srfi/13)
