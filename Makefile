@@ -1,6 +1,6 @@
 BASENAME := koog
 VERSION := 1.0
-URL := http://contextlogger.org/koog/
+URL := http://koog.contextlogger.org/
 
 default : install-sh
 

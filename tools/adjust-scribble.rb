@@ -16,7 +16,7 @@ end
 def postproc_html fn
   modify_file(fn) do |data|
     data = data.sub(/<div class="versionbox"><span class="version[\w]*">Version: [.\d]+<\/span><\/div>/, '')
-    data = data.sub("</body>", '<hr class="light"/><p><a href="http://contextlogger.org/koog">Koog</a> utility manual, by <a href="http://hiit.fi/u/hasu/">Tero Hasu</a>. Last modified %s.</p></body>' % $mtime.to_s)
+    data = data.sub("</body>", '<hr class="light"/><p><a href="http://koog.contextlogger.org/">Koog</a> utility manual, by <a href="http://hiit.fi/u/hasu/">Tero Hasu</a>. Last modified %s.</p></body>' % $mtime.to_s)
     data = data.sub("</head>", '<link rel="shortcut icon" href="http://www.hiit.fi/sites/all/themes/hiit/favicon.ico" type="image/x-icon" /></head>')
   end
 end

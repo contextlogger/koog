@@ -48,7 +48,7 @@ Here are some real-world examples from the @hyperlink["http://contextlogger.org/
 Koog source code is retrievable with @hyperlink["http://git-scm.com/"]{Git}:
 
 @verbatim[#:indent 2]|{
-git clone http://korpi.hiit.fi/contextlogger2/koog.git
+git clone http://koog.contextlogger.org/koog.git
 }|
 
 @section[#:tag "faq"]{Hardly Ever Asked Questions (HEAQ)}
