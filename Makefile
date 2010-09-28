@@ -31,7 +31,7 @@ TARBALL := dist/$(BASENAME)-$(VERSION).tar.gz
 man :
 	-rm -r manual
 	scribble --html --dest manual manual.scrbl
-	ruby tools/adjust-scribble.rb manual
+	ruby tools/adjust-scribble.rb manual manual.scrbl ../index.html
 	#cp -a style.css manual/scribble-style.css
 
 tarball : info.rkt man
