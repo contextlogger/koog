@@ -2,6 +2,9 @@
 @(require scribble/eval scribble/basic)
 @(require (for-label "koog.ss" "cli.ss" "runtime.ss" "util.ss"))
 
+@(require setup/getinfo)
+@(define info (get-info (list "koog")))
+
 @title[#:tag "top"]{Koog Manual}
 
 @section[#:tag "concept"]{Concept}
@@ -47,9 +50,7 @@ Here are some real-world examples from the @hyperlink["http://contextlogger.org/
 
 Koog source code is retrievable with @hyperlink["http://git-scm.com/"]{Git}:
 
-@verbatim[#:indent 2]|{
-git clone http://koog.contextlogger.org/koog.git
-}|
+@(nested #:style 'inset (tt (string-append "git clone " (info 'repo-url))))
 
 @section[#:tag "faq"]{Hardly Ever Asked Questions (HEAQ)}
 

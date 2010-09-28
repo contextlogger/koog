@@ -28,13 +28,13 @@ TARBALL := dist/$(BASENAME)-$(VERSION).tar.gz
 
 # Scribble seems immature. Some of the documented options have no effect.
 # Instead of fighting with the tool we just patch the output.
-man :
+man : info.rkt
 	-rm -r manual
 	scribble --html --dest manual manual.scrbl
 	ruby tools/adjust-scribble.rb manual manual.scrbl ../index.html
 	#cp -a style.css manual/scribble-style.css
 
-tarball : info.rkt man
+tarball : man
 	-mkdir -p dist
 	tar -c -z -C .. -v -f $(TARBALL) $(SOURCES_WITH_DIR) koog/manual
 
