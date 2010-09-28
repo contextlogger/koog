@@ -1,0 +1,11 @@
+*.exe
+*.zo
+*~
+dist/
+doc/
+info.rkt
+local.mk
+manual/
+paper/
+retired/
+web/
