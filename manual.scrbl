@@ -1,5 +1,5 @@
 #lang scribble/manual
-@(require scribble/eval scribble/basic)
+@(require scribble/basic scribble/core)
 @(require (for-label "koog.ss" "cli.ss" "runtime.ss" "util.ss"))
 
 @(require setup/getinfo)
@@ -12,6 +12,14 @@
 @emph{Mixed-code generation} is a form of template-based code generation where the template file is overwritten with the generated file, with the code generation directives intact. The term was (as far as we know) introduced by Jack Herrington in his book Code Generation in Action (Manning, 2003).
 
 Koog can function as a traditional mixed-code generator for a host language that uses C language style comments. Koog also supports a restricted form of mixed-code generation where only specific regions of the source file are actually regenerated.
+
+@section[#:tag "terminology"]{Terminology}
+
+@(define definition (style 'definition (list (background-color-property (list #xee #xee #xee)))))
+
+We define related terminology as follows:
+
+@para[#:style definition]{@bold{Definition.} A @emph{mixed-code generator} is a compiler that modifies its input based on instructions found in the input itself, and produces output which can be (repeatedly) refed to the compiler as valid input. The instructions, which are given in a (generator-dictated) @emph{generator language}, are retained in the output. The input may also include some (potentially foreign) @emph{host language} text, and the goal typically is for the entire generator output to be a valid host language document. Specially formatted host language comments in the input function both as: @emph{directive}s specifying what text to generate; and as @emph{marker}s identifying the @emph{region}s of host language text that are allowed to be replaced. A region and its enclosing markers together constitute a @emph{section}.}
 
 @section[#:tag "features"]{Features}
 
