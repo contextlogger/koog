@@ -2,9 +2,11 @@ BASENAME := koog
 VERSION := 1.0
 URL := http://koog.contextlogger.org/
 
-default : install-sh
+default : install
 
 -include local.mk
+
+install : install-sh
 
 # cli-shell.sh is implemented not to depend on its location,
 # so symlinking is fine, there is no location confusion.
