@@ -1,6 +1,7 @@
 BASENAME := koog
-VERSION := 1.0
+VERSION := 1.1
 URL := http://koog.contextlogger.org/
+REPO_URL := git://github.com/contextlogger/koog.git
 
 default : install
 
@@ -16,10 +17,12 @@ install-sh :
 
 info.rkt : Makefile
 	echo "#lang setup/infotab" > $@
+	echo ";; generated file, do not edit" >> $@
 	echo "(define name \"$(BASENAME)\")" >> $@
 	echo "(define version \"$(VERSION)\")" >> $@
 	echo '(define blurb (list "A mixed-code generator library and command-line tool."))' >> $@
 	echo "(define url \"$(URL)\")" >> $@
+	echo "(define repo-url \"$(REPO_URL)\")" >> $@
 	echo "(define scribblings '((\"manual.scrbl\" ())))" >> $@
 	echo '(define primary-file "koog.ss")' >> $@
 
