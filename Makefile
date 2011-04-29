@@ -55,7 +55,8 @@ MKINDEX := ../tools/bin/make-index-page.rb
 web :
 	-rm -r web
 	mkdir web
-	cp *.txt index.html style.css web/
+	cp -a ../tools/web/hiit.css web/
+	cp -a *.txt index.html web/
 	rsync -av manual dist web/
 	$(MKINDEX) web/dist
 	chmod -R a+rX web
