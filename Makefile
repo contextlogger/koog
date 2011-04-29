@@ -37,20 +37,39 @@ man : info.rkt
 	-rm -r manual
 	scribble --html --dest manual manual.scrbl
 	ruby tools/adjust-scribble.rb manual manual.scrbl ../index.html
-	#cp -a style.css manual/scribble-style.css
 
 tarball : man
 	-mkdir -p dist
 	tar -c -z -C .. -v -f $(TARBALL) $(SOURCES_WITH_DIR) koog/manual
 
-homepage :
+# This is pointless when hosted on GitHub, as there is an interface
+# for browsing the repo.
+src-web-dir :
+	mkdir web/src
+	rsync -a --exclude '*.html' --exclude '*.scrbl' --exclude INSTALL --exclude LICENSE --exclude Makefile --exclude '*.rb' $(SOURCES) web/src/
+
+MKINDEX := ../tools/bin/make-index-page.rb
+
+.PHONY : web
+
+web :
 	-rm -r web
 	mkdir web
 	cp INSTALL LICENSE index.html style.css web/
-	rsync -av manual dist web/ 
-	mkdir web/src
-	rsync -a --exclude '*.html' --exclude '*.scrbl' --exclude INSTALL --exclude LICENSE --exclude Makefile --exclude '*.rb' $(SOURCES) web/src/
+	rsync -av manual dist web/
+	$(MKINDEX) web/dist
 	chmod -R a+rX web
 	tidy -utf8 -eq web/index.html
 
-all : tarball homepage
+HTDOCS := ../contextlogger.github.com
+PAGEPATH := koog
+PAGEHOME := $(HTDOCS)/$(PAGEPATH)
+
+release :
+	-mkdir -p $(PAGEHOME)
+	rsync -av --delete web/ $(PAGEHOME)/
+
+upload :
+	cd $(HTDOCS) && git add $(PAGEPATH) && git commit -a -m updates && git push
+
+all : tarball web
