@@ -47,7 +47,7 @@ The @hyperlink["../src/runtime.ss"]{@racket[koog/runtime]} module exports parame
 
 @section[#:tag "examples"]{Examples}
 
-Here are some real-world examples from the @hyperlink["http://contextlogger.org/"]{ContextLogger2} codebase:
+Here are some real-world examples from the @hyperlink["http://contextlogger.github.io/"]{ContextLogger2} codebase:
 
 @(itemlist
   @item{@hyperlink["http://korpi.hiit.fi/contextlogger2/daemon/private-cxx-api/html/epoc-indicator_8hpp-source.html"]{generating code for Symbian two-phase construction};}
@@ -64,7 +64,3 @@ Koog source code is retrievable with @hyperlink["http://git-scm.com/"]{Git}:
 
 @bold{Q:} Where does the name "Koog" come from?@linebreak{}
 @bold{A:} It is short for the Finnish word "@emph{koo}di@emph{g}eneraattori" (code generator).
-
-@; Local Variables:
-@; mode: longlines
-@; End:

@@ -1,6 +1,6 @@
 BASENAME := koog
 VERSION := 1.1
-URL := http://koog.contextlogger.org/
+URL := http://contextlogger.github.io/
 REPO_URL := git://github.com/contextlogger/koog.git
 
 default : install
